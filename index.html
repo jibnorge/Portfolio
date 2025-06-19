@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Jibin George - Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">George<span>></span></div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Certifications</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+            </ul>
+            <a href="https://github.com/jibnorge" class="btn-github" target="_blank" rel="noopener">Github Profile</a>
+        </nav>
+    </header>
+
+    <section id="about" class="hero-section">
+        <div class="hero-content">
+            <h1>Hi, I am <br />Jibin George</h1>
+            <h2>I am a <span id="typing-text" class="highlight" aria-live="polite"></span><span class="cursor">|</span></h2>
+            <p>
+                Machine Learning and Data Analytics professional skilled in Python, SQL, and AWS. 
+                Passionate about building predictive models and transforming raw data into actionable insights through Tableau visualizations. 
+                Seeking opportunities as a Data Analyst or ML Engineer to solve complex business problems.
+            </p>
+            <a href="https://drive.google.com/file/d/18sM2SB-CrBX0gWiCP460lD4m1BYDNHlg/view?usp=sharing" class="btn-resume">Check Resume</a>
+        </div>
+        <div class="hero-image">
+            <img src="images\hero-image.jpg" alt="Jibin George" />
+        </div>
+    </section>
+
+    <script>
+        const positions = ["Data Science Enthusiast", "Aspiring Data Engineer", "Cloud Data Explorer", "Python Expert"];
+        let currentIndex = 0;
+        let currentText = "";
+        let isTyping = true;
+        const typingSpeed = 100; // milliseconds per character
+        const backspaceSpeed = 50; // milliseconds per character
+        const pauseTime = 2000; // milliseconds to pause after typing
+
+        function type() {
+            const textElement = document.getElementById("typing-text");
+            if (isTyping) {
+                if (currentText.length < positions[currentIndex].length) {
+                    currentText += positions[currentIndex][currentText.length];
+                    textElement.textContent = currentText;
+                    setTimeout(type, typingSpeed);
+                } else {
+                    isTyping = false;
+                    setTimeout(type, pauseTime);
+                }
+            } else {
+                if (currentText.length > 0) {
+                    currentText = currentText.slice(0, -1);
+                    textElement.textContent = currentText;
+                    setTimeout(type, backspaceSpeed);
+                } else {
+                    isTyping = true;
+                    currentIndex = (currentIndex + 1) % positions.length;
+                    setTimeout(type, typingSpeed);
+                }
+            }
+        }
+
+        // Start the animation when the page loads
+        window.onload = function() {
+            type();
+        };
+    </script>
+
+    <section id="skills" class="skills-section">
+        <h2>Skills</h2>
+        <p>Here are some of my skills on which I have been working on for the past 3 years.</p>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>Programming Languages</h3>
+                <div class="skill-items">
+                    <span>Python</span>
+                    <span>R</span>
+                    <span>SQL</span>
+                    <span>Scala</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>Big Data Tools</h3>
+                <br>
+                <div class="skill-items">
+                    <span>Hadoop</span>
+                    <span>Hive</span>
+                    <span>Spark</span>
+                    <span>Sqoop</span>
+                    <span>Cloudera</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>Databases</h3>
+                <br>
+                <div class="skill-items">
+                    <span>SQL Server</span>
+                    <span>MySQL</span>
+                    <span>IBM Db2</span>
+                    <span>Oracle</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>Cloud</h3>
+                <br>
+                <div class="skill-items">
+                    <span>AWS</span>
+                    <span>Azure</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>Visualization</h3>
+                <div class="skill-items">
+                    <span>Tableau</span>
+                    <span>PowerBI</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>Others</h3>
+                <div class="skill-items">
+                    <span>Git</span>
+                    <span>GitHub</span>
+                    <span>PyCharm</span>
+                    <span>VS Code</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="education-section">
+        <h2>Certifications</h2>
+        <p>My professional certifications in cutting-edge technologies that validate my technical expertise and commitment to continuous learning.</p>
+        <div class="timeline">
+            <div class="timeline-item left">
+                <div class="content">
+                    <div class="desc-start">
+                        <div class="image-container">
+                            <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/T6kdcdKSTfg2aotxT/hzmoNKtzvAzXsEqx8_T6kdcdKSTfg2aotxT_mhozjgeoabwbtoiZP_1748019455770_completion_certificate.pdf" target="_blank">
+                                <img src="images\accenture-logo.png" alt="Accenture" />
+                            </a>
+                        </div>
+                        <div class="desc-text">
+                            <h3>Data Analytics and Visualization Job Simulation</h3>
+                            <h4>Accenture</h4>
+                            <span>May 2025</span>
+                        </div>
+                    </div>
+                    <p style="text-align: justify; text-justify: inter-word;">
+                        Earned Accenture's Data Analytics & Visualization certification by completing a real-world simulation—cleaning 7 datasets and identifying content trends to guide strategy. 
+                        Delivered insights via PowerPoint and stakeholder presentations, proving analytical and communication skills for data-driven decision-making.
+                    </p>
+                    <br>
+                    <p style="text-align: justify; text-justify: inter-word;"><strong>Skills:</strong> Microsoft PowerPoint, Microsoft Excel, Stakeholder Management, Data Analysis</p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="content">
+                    <div class="desc-start">
+                        <div class="image-container">
+                            <a href="https://www.coursera.org/account/accomplishments/verify/IKNNZ0F4M8W7" target="_blank">
+                                <img src="images\google-logo.png" alt="Google" />
+                            </a>
+                        </div>
+                        <div class="desc-text">
+                            <h3 style="text-align: left;">Foundations: Data, Data, Everywhere</h3>
+                            <h4 style="text-align: left;">Google</h4>
+                            <span style="text-align: left;">May 2025</span>
+                        </div>
+                    </div>
+                    <p style="text-align: justify; text-justify: inter-word;">
+                        Earned the Google Data Analytics Certificate, mastering data ecosystems, analytical thinking, and core tools like spreadsheets, SQL, and visualization platforms. 
+                        This certification validates my ability to clean, analyze, and visualize data to drive business decisions, preparing me for entry-level data analyst roles.
+                    </p>
+                    <br>
+                    <p style="text-align: justify; text-justify: inter-word;"><strong>Skills:</strong> Data Cleansing, Data Management, Data Analysis, Data Ethics, Data Processing, Data-Driven Decision-Making, Data Visualization, Analytical Skills</p>
+                </div>
+            </div>
+            <div class="timeline-item left">
+                <div class="content">
+                    <div class="desc-start">
+                        <div class="image-container">
+                            <a href="https://www.coursera.org/account/accomplishments/verify/17LABL4S3C3Q" target="_blank">
+                                <img src="images\ibm-logo.png" alt="Google" />
+                            </a>
+                        </div>
+                        <div class="desc-text">
+                            <h3>Introduction to Data Analytics</h3>
+                            <h4>IBM</h4>
+                            <span>May 2025</span>
+                        </div>
+                    </div>
+                    <p style="text-align: justify; text-justify: inter-word;">
+                        Completed IBM's Data Analytics certification, mastering end-to-end analytics workflows and differentiating data roles (Scientist/Analyst/Engineer). 
+                        Gained hands-on experience with data structures, cleaning, mining, and visualization to drive business insights.
+                    </p>
+                    <br>
+                    <p style="text-align: justify; text-justify: inter-word;"><strong>Skills:</strong> Data Analysis, Data Science, Data Visualization, Python Programming, SQL</p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="content">
+                    <div class="desc-start">
+                            <div class="image-container">
+                                <a href="https://www.coursera.org/account/accomplishments/verify/L4JAE5P7CY5M" target="_blank">
+                                    <img src="images\meta-logo.jpg" alt="Google" />
+                                </a>
+                            </div>
+                        <div class="desc-text">
+                            <h3 style="text-align: left;">Advanced Programming in Python</h3>
+                            <h4 style="text-align: left;">Meta</h4>
+                            <span style="text-align: left;">April 2025</span>
+                        </div>
+                    </div>
+                    <p style="text-align: justify; text-justify: inter-word;">
+                        Completed Meta's programming fundamentals course, mastering Python syntax and core concepts including objects, classes, and methods. 
+                        Developed practical coding skills for problem-solving and application development.
+                    </p>
+                    <br>
+                    <p style="text-align: justify; text-justify: inter-word;"><strong>Skills:</strong> Software Testing, Programming Principles, Big Data, Python (Programming Language), Computer Programming, Django, Application Programming Interfaces (API), Cloud Hosting</p>
+                </div>
+            </div>
+            <div class="timeline-item left">
+                <div class="content">
+                    <div class="desc-start">
+                        <div class="image-container">
+                            <a href="https://www.credly.com/badges/91e560e2-132c-4c5a-9fc8-6d255974ef5b/linked_in_profile" target="_blank">
+                                <img src="images\aws-logo.jpg" alt="Google" />
+                            </a>
+                        </div>
+                        <div class="desc-text">
+                            <h3>Introduction to Generative AI</h3>
+                            <h4>AWS</h4>
+                            <span>March 2025</span>
+                        </div>
+                    </div>
+                    <p style="text-align: justify; text-justify: inter-word;">
+                        Earned AWS certification in Generative AI fundamentals, mastering foundation models and real-world applications. 
+                        Demonstrated expertise in AI concepts, use cases, and ethical considerations through rigorous assessment.
+                    </p>
+                    <br>
+                    <p style="text-align: justify; text-justify: inter-word;"><strong>Skills:</strong> Amazon Web Services (AWS), AWS Cloud Services</p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="content">
+                    <div class="desc-start">
+                        <div class="image-container">
+                            <a href="https://www.udemy.com/certificate/UC-88bd124d-d897-4a84-ac37-c299f1e586d1/" target="_blank">
+                                <img src="images\udemy-logo.png" alt="Google" />
+                            </a>
+                        </div>
+                        <div class="desc-text">
+                            <h3 style="text-align: left;">The Data Science Course 2022: Complete Data Science Bootcamp</h3>
+                            <h4 style="text-align: left;">Udemy </h4>
+                            <span style="text-align: left;">Aug 2022</span>
+                        </div>
+                    </div>
+                    <p style="text-align: justify; text-justify: inter-word;">
+                        Mastered end-to-end data science through Udemy's intensive program, gaining expertise in Python (NumPy/pandas), machine learning (scikit-learn/TensorFlow), statistical analysis, and Tableau visualization. 
+                        Developed practical skills for real-world applications including predictive modeling, deep learning, and business case problem-solving.
+                    </p>
+                    <br>
+                    <p style="text-align: justify; text-justify: inter-word;"><strong>Skills:</strong> Intro to Data and Data Science, Mathematics, Advanced Statistics, Python, Tableau, Machine Learning</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects-section">
+        <h2>Projects</h2>
+        <p>My project portfolio spans multiple domains, including healthcare AI systems, deep learning applications, and scalable cloud solutions.</p>
+        <!-- <div class="project-filters">
+            <button class="filter-btn active" data-filter="all">ALL</button>
+            <button class="filter-btn" data-filter="web">WEB APP'S</button>
+            <button class="filter-btn" data-filter="android">ANDROID APP'S</button>
+            <button class="filter-btn" data-filter="ml">MACHINE LEARNING</button>
+        </div> -->
+        <div class="projects-grid">
+            <a href="https://github.com/jibnorge/Toronto-Apartment-Buildings-Project-Management-Analysis" target="_blank">
+                <div class="project-card" data-category="web">
+                    <img src="images\Dashboard.png" alt="Toronto Dashboard" />
+                    <div class="project-info">
+                        <h3>Data-Driven Evaluation Of Toronto Apartment Buildings</h3>
+                        <p>Mar 2025</p>
+                        <p>The project involves end-to-end project management, including planning, resource allocation,...</p>
+                        <div class="tags">
+                            <span>Python</span>
+                            <span>SQL</span>
+                            <span>Tableau</span>
+                            <span>Project Management</span>
+                            <span>Statistics</span>
+                            <span>Modelling</span>
+                            <span>Windows Task Scheduler</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="https://github.com/jibnorge/AWS-Data-Engineering-Pipeline-From-S3-to-QuickSight" target="_blank">
+                <div class="project-card" data-category="web">
+                    <img src="images\quicksight.png" alt="QuickSight" />
+                    <div class="project-info">
+                        <h3>AWS Data Engineering Pipeline From S3 to QuickSight</h3>
+                        <p>Mar 2024</p>
+                        <p>A comprehensive AWS Data Engineering Capstone Project showcases a robust ETL workflow...</p>
+                        <div class="tags">
+                            <span>AWS</span>
+                            <span>Amazon S3</span>
+                            <span>QuickSight</span>
+                            <span>Cloud9</span>
+                            <span>Amazon Athena</span>
+                            <span>SQL</span>
+                            <span>AWS Glue</span>
+                            <span>Machine Learning</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="https://github.com/jibnorge/DB2-Customer-Care-Database-Management" target="_blank">
+                <div class="project-card" data-category="web">
+                    <img src="images\db2.png" alt="Db2 Schema" />
+                    <div class="project-info">
+                        <h3>DB2 Customer Care Database Management</h3>
+                        <p>Mar 2024</p>
+                        <p>The project focuses on designing and implementing a customer care database using IBM DB2...</p>
+                        <div class="tags">
+                            <span>SQL</span>
+                            <span>IBM Db2</span>
+                            <span>SSMS</span>
+                            <span>Database Managment</span>
+                            <span>Data Mining</span>
+                            <span>Data Analysis</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <!-- <div class="project-card" data-category="ml">
+                <img src="F:\Projects\Portfolio\portfolio-website\images\book-website.png" alt="Website Image" />
+                <div class="project-info">
+                    <h3>WebScraper FlaskDB</h3>
+                    <p>Nov 2024</p>
+                    <p>WebScraper-FlaskDB is a web scraping project that extracts book details from https://books...</p>
+                    <div class="tags">
+                        <span>Python</span>
+                        <span>WebScraping</span>
+                    </div>
+                </div>
+            </div> -->
+            <a href="https://github.com/jibnorge/Airbnb-NYC-Price-Prediction" target="_blank">
+                <div class="project-card" data-category="android">
+                    <img src="images\airbnb.png" alt="Airbnb Dashbaord" />
+                    <div class="project-info">
+                        <h3>Airbnb NYC Price Prediction</h3>
+                        <p>Nov 2023</p>
+                        <p>The project aims to analyze and predict rental prices for Airbnb listings in New York City...</p>
+                        <div class="tags">
+                            <span>Python</span>
+                            <span>R</span>
+                            <span>SQL</span>
+                            <span>Data Mining</span>
+                            <span>Machine Learning</span>
+                            <span>Tableau</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <section id="education" class="education-section">
+        <h2>Education</h2>
+        <p>My education has been a journey of self-discovery and growth. My educational details are as follows.</p>
+        <div class="timeline">
+            <div class="timeline-item left">
+                <div class="content">
+                    <div class="desc-start">
+                        <div class="image-container">
+                            <img src="images\stclair-logo.png" alt="KIIT" />
+                        </div>
+                        <div class="desc-text">
+                            <h3>St. Clair COllege</h3>
+                            <h4>Post-Graduate in Data Analytics for Business</h4>
+                            <span>Sept 2023 - Apr 2025</span>
+                            <p><strong>GPA:</strong> 3.91/4</p>
+                        </div>
+                    </div>
+                    <p style="text-align: justify; text-justify: inter-word;">
+                        Completed an intensive two-year program focused on transforming raw data into actionable business insights. 
+                        Gained hands-on expertise in Python programming, statistical modeling, machine learning, and data visualization (Power BI, Tableau). 
+                        Applied predictive analytics to real-world business challenges through capstone projects, optimizing decision-making in areas like marketing, finance, and supply chain management.
+                    </p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="content">
+                    <div class="desc-start">
+                        <div class="image-container">
+                            <img src="images\imarticus-logo.png" alt="Methodist School" />
+                        </div>
+                        <div class="desc-text">
+                            <h3 style="text-align: justify;">Imarticus Learning</h3>
+                            <h4 style="text-align: justify;">Post Graduate Program in Data Analytics and Machine Learning</h4>
+                            <span style="text-align: justify;">Sept 2022 - Feb 2023</span>
+                            <p style="text-align: justify;"><strong>GPA:</strong> 4/4</p>
+                        </div>
+                    </div>
+                    <p style="text-align: justify; text-justify: inter-word;">
+                        Built a robust foundation in data analytics through a structured curriculum, beginning with Python programming and statistics, advancing to machine learning algorithms (supervised/unsupervised learning) and deep learning (CNNs, RNNs). 
+                        Expanded expertise into Big Data processing using Hadoop and Hive for scalable data solutions, and culminated with Power BI for impactful data visualization and business reporting.
+                    </p>
+                </div>
+            </div>
+            <div class="timeline-item left">
+                <div class="content">
+                    <div class="desc-start">
+                        <div class="image-container">
+                            <img src="images\marian-logo.png" alt="Methodist School" />
+                        </div>
+                        <div class="desc-text">
+                            <h3>Marian College Kuttikkanam</h3>
+                            <h4>Bachelor of Science in Mathematics</h4>
+                            <span>Jun 2019 - Apr 2022</span>
+                            <p><strong>GPA:</strong> 3.5/4</p>
+                        </div>
+                    </div>
+                    <p style="text-align: justify; text-justify: inter-word;">
+                        Developed a strong analytical foundation through advanced coursework in statistics, linear algebra, calculus, and discrete mathematics. 
+                        Applied theoretical concepts to solve real-world problems, honing quantitative reasoning, logical structuring, and algorithmic thinking—core skills for data science and machine learning.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2>Contact</h2>
+        <p>Feel free to reach out to me for any questions or opportunities!</p>
+        <form action="https://formsubmit.co/jibingeorge7337@gamil.com" method="POST" class="contact-form">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://yourportfolio.com/thankyou.html">
+            <label for="email">Email Me 🚀</label>
+            <input type="email" id="email" name="email" placeholder="Your Email" required />
+            <input type="text" id="name" name="name" placeholder="Your Name" required />
+            <input type="text" id="subject" name="subject" placeholder="Subject" />
+            <textarea id="message" name="message" placeholder="Message" rows="5"></textarea>
+            <button type="submit" class="btn-send">Send</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>Jibin George</p>
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/jibnorge/" aria-label="LinkedIn"><img src="https://img.icons8.com/ios-filled/24/ffffff/linkedin.png" alt="LinkedIn" /></a>
+            <a href="https://public.tableau.com/app/profile/jibnorge/vizzes" aria-label="Tableau"><img src="images\tableau-icon.png" alt="Tableau" /></a>
+            <a href="https://github.com/jibnorge" aria-label="GitHub"><img src="https://img.icons8.com/ios-filled/24/ffffff/github.png" alt="GitHub" /></a>
+        </div>
+        <p>© 2025 Jibin George. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
